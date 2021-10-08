@@ -34,14 +34,19 @@ def build_model(detector_backend):
 def detect_face(face_detector, detector_backend, img, align = True):
 
     obj = detect_faces(face_detector, detector_backend, img, align)
+    print(obj)
+    print('......', len(obj))
+    print(obj)
+    return obj
+    # print('......', len(obj))
 
-    if len(obj) > 0:
-        face, region = obj[0] #discard multiple faces
-    else: #len(obj) == 0
-        face = None
-        region = [0, 0, img.shape[0], img.shape[1]]
+    # if len(obj) > 0:
+    #     face, region = obj[0] #discard multiple faces
+    # else: #len(obj) == 0
+    #     face = None
+    #     region = [0, 0, img.shape[0], img.shape[1]]
 
-    return face, region
+    # return face, region
 
 def detect_faces(face_detector, detector_backend, img, align = True):
 
